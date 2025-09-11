@@ -1,0 +1,17 @@
+{
+  "name": "claude-code-talk-demo",
+  "version": "1.0.0",
+  "description": "Demo for Claude Code SDK usage",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "demo": "node demo.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-code": "^1.0.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4"
+  }
+}

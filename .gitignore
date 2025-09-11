@@ -1,0 +1,9 @@
+# Dependencies
+node_modules/
+
+# Demo outputs
+**/demos/requests.jsonl
+**/demos/requests.json
+
+# OS
+.DS_Store
