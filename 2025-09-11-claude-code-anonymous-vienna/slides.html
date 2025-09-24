@@ -627,7 +627,7 @@ Command: cd ~/Desktop && npx @biomejs/biome format claude.js --write</code></pre
 
     <!-- Controls hint -->
     <div class="controls-hint">
-        Use ← → or Space to navigate
+        Use ← → or Space to navigate, F for fullscreen
     </div>
 
     <!-- Timer -->
@@ -681,6 +681,17 @@ Command: cd ~/Desktop && npx @biomejs/biome format claude.js --write</code></pre
             showSlide(currentSlide);
         }
 
+        // Fullscreen functionality
+        function toggleFullscreen() {
+            if (!document.fullscreenElement) {
+                document.documentElement.requestFullscreen().catch((err) => {
+                    console.log(`Error attempting to enable fullscreen: ${err.message}`);
+                });
+            } else {
+                document.exitFullscreen();
+            }
+        }
+
         // Keyboard navigation
         document.addEventListener('keydown', (e) => {
             switch(e.key) {
@@ -700,6 +711,11 @@ Command: cd ~/Desktop && npx @biomejs/biome format claude.js --write</code></pre
                 case 'End':
                     currentSlide = totalSlides - 1;
                     showSlide(currentSlide);
+                    break;
+                case 'f':
+                case 'F':
+                    e.preventDefault();
+                    toggleFullscreen();
                     break;
             }
         });
